@@ -11,7 +11,7 @@ def transform(df, *args, **kwargs):
     categorical = ['PULocationID', 'DOLocationID']
     numerical = ['trip_distance']
 
-    train_dicts = df[categorical + numerical].to_dict(orient='records')
+    train_dicts = df[categorical].to_dict(orient='records')
 
     dv = DictVectorizer()
     X_train = dv.fit_transform(train_dicts)

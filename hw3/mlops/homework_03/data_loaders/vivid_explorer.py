@@ -18,6 +18,15 @@ def load_data_from_file(*args, **kwargs):
 
     Docs: https://docs.mage.ai/design/data-loading#fileio
     """
+    print(os.getcwd())
+    current_directory = os.getcwd()
+
+    # List all files and directories in the current directory
+    files = os.listdir(current_directory)
+
+    print("Files and directories in '", current_directory, "':")
+    for file in files:
+        print(file)
     filepath = './yellow_tripdata_2023-03.parquet'
 
     return pd.read_parquet(filepath)
